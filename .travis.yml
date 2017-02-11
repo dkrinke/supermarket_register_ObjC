@@ -5,4 +5,4 @@ xcode_scheme: Supermarket_Register_ObjC #4
 xcode_sdk: iphonesimulator8.3 #5
 
 script:
-    - xcodebuild clean build test -sdk iphonesimulator -project Supermarket_Register_ObjC/Supermarket_Register_ObjC.xcodeproj -scheme Supermarket_Register_ObjC CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'
+    - xcodebuild clean build test -sdk iphonesimulator -project Supermarket_Register_ObjC/Supermarket_Register_ObjC.xcodeproj -scheme Supermarket_Register_ObjC CODE_SIGNING_REQUIRED=NO -destination 'platform:iOS Simulator, id:1FD54EA7-5A25-4D6F-8599-D6F7687DA4EE, OS:10.2, name:iPhone 6'
