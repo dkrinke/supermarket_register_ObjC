@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Product Record : NSObject
+@interface ProductRecord : NSObject
 
 - (BOOL) passInName:(NSString *) newName passInCode:(NSString *) newCode passInPrice:(double *) newPrice;
 - (NSString *) getName;
 - (NSString *) getCode;
-- (double *) getPrice;
+- (double) getPrice;
 
 @end

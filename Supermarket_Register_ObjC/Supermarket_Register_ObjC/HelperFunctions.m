@@ -34,7 +34,7 @@
     
     else{
         NSError *error = nil;
-        NSString *pattern = @"^((([A-Za-z0-9]{4}-){3})[A-Za-z0-9]{4};)$|^((([A-Za-z0-9]{4}-){3})[A-Za-z0-9]{4};)+((([A-Za-z0-9]{4}-){3})[A-Za-z0-9]{4};?)$";
+        NSString *pattern = @"^((([A-Za-z0-9]{4}-){3})[A-Za-z0-9]{4})$|^((([A-Za-z0-9]{4}-){3})[A-Za-z0-9]{4};)+((([A-Za-z0-9]{4}-){3})[A-Za-z0-9]{4};?)$";
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
         
         NSAssert(regex, @"Unable to create regular expression");
@@ -68,10 +68,10 @@
 
  - returns: String.
 */
-- (NSString *) toDollarFormat:(double *)amount{
+- (NSString *) toDollarFormat:(double)amount{
     
-    NSLog(@"Pre Amount: %.2f", *amount); //Testing
-    return [NSString stringWithFormat:@"$%.2f", *amount];
+    NSLog(@"Pre Amount: %.2f", amount); //Testing
+    return [NSString stringWithFormat:@"$%.2f", amount];
 }
 
 @end

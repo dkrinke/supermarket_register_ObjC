@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 #import "HelperFunctions.h"
+#import "ProductRecordHandler.h"
 
-@interface ViewController ()
+@interface ViewController (){
+
+}
 @property (weak, nonatomic) IBOutlet UITextField *userInput;
 @property (weak, nonatomic) IBOutlet UILabel *tax;
 @property (weak, nonatomic) IBOutlet UILabel *total;
@@ -18,9 +21,15 @@
 
 @implementation ViewController
 
+ProductRecordHandler *productRecordHandler;
+HelperFunctions *helper;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor]; //Change background color
+    helper = [[HelperFunctions alloc] init];
+    productRecordHandler = [[ProductRecordHandler alloc] init];
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -38,17 +47,21 @@
     NSLog(@"User Input: %@", enteredText); //Testing
     
     //Helper Functions called here
-    HelperFunctions *helper = [[HelperFunctions alloc] init];
     if([helper validateInput: [helper toCap:enteredText]])
     {
         NSLog(@"Passed"); //Testing
         //Product Handler Functions called here
+        NSMutableArray *results = [productRecordHandler calcTotal: enteredText];
         
         double testTax = 0.10000001f;
-        double testTotal = 1.10000001f;
 
-        _tax.text = [helper toDollarFormat:&testTax]; //Testing to confirm UILabel update method
-        _total.text = [helper toDollarFormat:&testTotal]; //Testing to confirm UILabel update method
+        NSNumber *realTax = results[0];
+        NSNumber *realTotal = results[0];
+        
+//        NSLog(@"Total: %.2f", realTotal); //Testing
+ 
+        _tax.text = [helper toDollarFormat:testTax]; //Testing to confirm UILabel update method
+        _total.text = [helper toDollarFormat:realTotal.doubleValue]; //Testing to confirm UILabel update method
 
     }
     else
