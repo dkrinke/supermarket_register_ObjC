@@ -52,6 +52,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitProcessCodes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fgZ-Tp-lZE"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Please Enter Product Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOL-3l-LpM">
                                 <rect key="frame" x="42" y="196" width="236" height="30"/>
@@ -92,6 +95,11 @@
                             <constraint firstItem="HDg-bR-ahb" firstAttribute="width" secondItem="JfJ-8w-AQJ" secondAttribute="height" multiplier="33:160" id="um5-E0-7NQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tax" destination="qL9-F3-beS" id="VvT-t1-2Be"/>
+                        <outlet property="total" destination="4Jr-Sc-E0X" id="eCZ-pd-s06"/>
+                        <outlet property="userInput" destination="BOL-3l-LpM" id="w0h-o2-hXu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

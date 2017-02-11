@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)submitProcessCodes:(UIButton *)sender;
 
 @end
 
