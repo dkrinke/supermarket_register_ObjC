@@ -1,22 +1,96 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="JfJ-8w-AQJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tax:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nct-Da-2to">
+                                <rect key="frame" x="68" y="313" width="32" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbx-zJ-uKx">
+                                <rect key="frame" x="68" y="342" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-F3-beS">
+                                <rect key="frame" x="125" y="313" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jr-Sc-E0X">
+                                <rect key="frame" x="125" y="342" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDg-bR-ahb">
+                                <rect key="frame" x="114" y="245" width="99" height="30"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Please Enter Product Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOL-3l-LpM">
+                                <rect key="frame" x="42" y="196" width="236" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH6-bJ-UbY">
+                                <rect key="frame" x="26" y="74" width="278" height="45"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Supermarket Register">
+                                        <attributes>
+                                            <font key="NSFont" size="25" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VH6-bJ-UbY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="4iR-7g-B15"/>
+                            <constraint firstItem="4Jr-Sc-E0X" firstAttribute="centerX" secondItem="JfJ-8w-AQJ" secondAttribute="centerX" id="7h2-zC-W8O"/>
+                            <constraint firstItem="HDg-bR-ahb" firstAttribute="top" secondItem="BOL-3l-LpM" secondAttribute="bottom" constant="21" id="96Y-85-ZnV"/>
+                            <constraint firstItem="BOL-3l-LpM" firstAttribute="width" secondItem="JfJ-8w-AQJ" secondAttribute="height" multiplier="50:120" id="CTV-Ns-hMz"/>
+                            <constraint firstItem="BOL-3l-LpM" firstAttribute="top" secondItem="VH6-bJ-UbY" secondAttribute="bottom" constant="60" id="G3n-02-9VU"/>
+                            <constraint firstItem="4Jr-Sc-E0X" firstAttribute="top" secondItem="qL9-F3-beS" secondAttribute="bottom" constant="8" id="GSU-yX-gtM"/>
+                            <constraint firstItem="Rbx-zJ-uKx" firstAttribute="top" secondItem="Nct-Da-2to" secondAttribute="bottom" constant="8" id="H73-tZ-C3X"/>
+                            <constraint firstItem="Nct-Da-2to" firstAttribute="top" secondItem="HDg-bR-ahb" secondAttribute="bottom" constant="36" id="TDc-7n-StP"/>
+                            <constraint firstItem="VH6-bJ-UbY" firstAttribute="centerX" secondItem="JfJ-8w-AQJ" secondAttribute="centerX" id="TzA-dO-JrD"/>
+                            <constraint firstItem="qL9-F3-beS" firstAttribute="centerX" secondItem="JfJ-8w-AQJ" secondAttribute="centerX" id="U7J-f2-r5A"/>
+                            <constraint firstItem="BOL-3l-LpM" firstAttribute="centerX" secondItem="JfJ-8w-AQJ" secondAttribute="centerX" id="buu-By-8aN"/>
+                            <constraint firstItem="qL9-F3-beS" firstAttribute="top" secondItem="HDg-bR-ahb" secondAttribute="bottom" constant="36" id="fTO-jP-NZg"/>
+                            <constraint firstItem="4Jr-Sc-E0X" firstAttribute="leading" secondItem="Rbx-zJ-uKx" secondAttribute="trailing" constant="14" id="hRI-iD-9t5"/>
+                            <constraint firstItem="qL9-F3-beS" firstAttribute="leading" secondItem="Nct-Da-2to" secondAttribute="trailing" constant="25" id="lyc-3n-cFz"/>
+                            <constraint firstItem="HDg-bR-ahb" firstAttribute="centerX" secondItem="BOL-3l-LpM" secondAttribute="centerX" id="nSZ-7r-fLs"/>
+                            <constraint firstItem="HDg-bR-ahb" firstAttribute="width" secondItem="JfJ-8w-AQJ" secondAttribute="height" multiplier="33:160" id="um5-E0-7NQ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
