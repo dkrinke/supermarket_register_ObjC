@@ -17,6 +17,7 @@
 		A85F95091E4EDE9800E847D2 /* Supermarket_Register_ObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F95081E4EDE9800E847D2 /* Supermarket_Register_ObjCUITests.m */; };
 		A85F95171E4F0F8800E847D2 /* HelperFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F95161E4F0F8800E847D2 /* HelperFunctions.m */; };
 		A85F951A1E4F30A800E847D2 /* ProductRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F95191E4F30A800E847D2 /* ProductRecord.m */; };
+		A85F951D1E4F380800E847D2 /* ProductRecordHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F951C1E4F380800E847D2 /* ProductRecordHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		A85F95181E4F124F00E847D2 /* HelperFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelperFunctions.h; sourceTree = "<group>"; };
 		A85F95191E4F30A800E847D2 /* ProductRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRecord.m; sourceTree = "<group>"; };
 		A85F951B1E4F30C600E847D2 /* ProductRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductRecord.h; sourceTree = "<group>"; };
+		A85F951C1E4F380800E847D2 /* ProductRecordHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRecordHandler.m; sourceTree = "<group>"; };
+		A85F951E1E4F382400E847D2 /* ProductRecordHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductRecordHandler.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				A85F95161E4F0F8800E847D2 /* HelperFunctions.m */,
 				A85F951B1E4F30C600E847D2 /* ProductRecord.h */,
 				A85F95191E4F30A800E847D2 /* ProductRecord.m */,
+				A85F951E1E4F382400E847D2 /* ProductRecordHandler.h */,
+				A85F951C1E4F380800E847D2 /* ProductRecordHandler.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85F94EB1E4EDE9800E847D2 /* ViewController.m in Sources */,
+				A85F951D1E4F380800E847D2 /* ProductRecordHandler.m in Sources */,
 				A85F95171E4F0F8800E847D2 /* HelperFunctions.m in Sources */,
 				A85F94E81E4EDE9800E847D2 /* AppDelegate.m in Sources */,
 				A85F94E51E4EDE9800E847D2 /* main.m in Sources */,

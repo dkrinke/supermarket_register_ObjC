@@ -13,13 +13,13 @@
 
 @property NSString *name;
 @property NSString *code;
-@property double *price;
+@property double price;
 
 @end
 
 @implementation ProductRecord
 
-- (BOOL) passInName:(NSString *) newName passInCode:(NSString *) newCode passInPrice:(double *) newPrice {
+- (BOOL) passInName:(NSString *) newName passInCode:(NSString *) newCode passInPrice:(double) newPrice {
     BOOL success = YES;
     
     self.name = newName;
@@ -55,7 +55,7 @@
  - returns: double.
 
  */
-- (double *) getPrice {
+- (double) getPrice {
     return self.price;
 }
 
