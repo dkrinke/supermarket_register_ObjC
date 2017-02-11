@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HelperFunctions.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userInput;
@@ -37,10 +38,35 @@
     NSLog(@"User Input: %@", enteredText); //Testing
     
     //Helper Functions called here
+    HelperFunctions *helper = [[HelperFunctions alloc] init];
+    if([helper validateInput: [helper toCap:enteredText]])
+    {
+        NSLog(@"Passed"); //Testing
+        //Product Handler Functions called here
+        
+        double testTax = 0.10000001f;
+        double testTotal = 1.10000001f;
+
+        _tax.text = [helper toDollarFormat:&testTax]; //Testing to confirm UILabel update method
+        _total.text = [helper toDollarFormat:&testTotal]; //Testing to confirm UILabel update method
+
+    }
+    else
+    {
+        NSLog(@"Failed"); //Testing
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:@"Invalid User Input"
+                                     message:@"Try inputing the product codes again. Separate multiple product codes with ;"
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* dismiss = [UIAlertAction
+                                   actionWithTitle:@"Dismiss"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       //Handle no, thanks button
+                                   }];
+        [alert addAction:dismiss];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
-    //Product Handler Functions called here
-    
-    _tax.text = @"$0.10"; //Testing to confirm UILabel update method
-    _total.text = @"$1.10"; //Testing to confirm UILabel update method
 }
 @end
