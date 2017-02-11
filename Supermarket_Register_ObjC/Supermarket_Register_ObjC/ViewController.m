@@ -44,8 +44,11 @@
         NSLog(@"Passed"); //Testing
         //Product Handler Functions called here
         
-        _tax.text = @"$0.10"; //Testing to confirm UILabel update method
-        _total.text = @"$1.10"; //Testing to confirm UILabel update method
+        double testTax = 0.10000001f;
+        double testTotal = 1.10000001f;
+
+        _tax.text = [helper toDollarFormat:&testTax]; //Testing to confirm UILabel update method
+        _total.text = [helper toDollarFormat:&testTotal]; //Testing to confirm UILabel update method
 
     }
     else

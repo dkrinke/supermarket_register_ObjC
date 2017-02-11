@@ -50,76 +50,28 @@
     return didValidate;
 }
 
+/**
+ Converts user input to uppercase and returns the result
+
+ - parameter bar: String of user input
+
+ - returns: String.
+*/
 - (NSString *)toCap:(NSString *)lowercase{
     return lowercase.uppercaseString;
 }
 
-//    func toCap(lowercase: String) -> String{
-//        return lowercase.uppercased()
-//    }
+/**
+ Converts a Double into a Dollar amount format String
+
+ - parameter bar: String Double amount
+
+ - returns: String.
+*/
+- (NSString *) toDollarFormat:(double *)amount{
+    
+    NSLog(@"Pre Amount: %.2f", *amount); //Testing
+    return [NSString stringWithFormat:@"$%.2f", *amount];
+}
 
 @end
-
-
-//    /**
-//     Vadlidates users input
-//     
-//     - parameter bar: String of user input
-//     
-//     - returns: Boolean.
-//     */
-//    func validateInput(input: String) -> Bool{
-//        
-//        if(input == ""){
-//            return false;
-//        }
-//        
-//        
-//        let inputPattern = "/((((((([A-Za-z0-9]){4}(-)){3})([A-Za-z0-9]){4}(;|)))(?!-))+)/g"
-//        let matcher = RegexHelper(inputPattern)
-//        
-//        if matcher.match(input: input) {
-//            return true
-//        }
-//        
-//        return false;
-//    }
-//    
-//    struct RegexHelper {
-//        let regex: NSRegularExpression?
-//        
-//        init(_ pattern: String) {
-//            var error: NSError?
-//            regex = NSRegularExpression(pattern: pattern, options: .CaseInsensitive, error: &error)
-//        }
-//        
-//        func match(input: String) -> Bool {
-//            if let matches = regex?.matchesInString(input, options: nil, range: NSMakeRange(0, count(input))){
-//                return matches.count > 0
-//            } else {
-//                return false
-//            }
-//        }
-//    }
-//    
-//    /**
-//     Converts user input to uppercase and returns the result
-//     
-//     - parameter bar: String of user input
-//     
-//     - returns: String.
-//     */
-//    func toCap(lowercase: String) -> String{
-//        return lowercase.uppercased()
-//    }
-//    
-//    /**
-//     Converts a Double into a Dollar amount format String
-//     
-//     - parameter bar: String Double amount
-//     
-//     - returns: String.
-//     */
-//    func returnDollarFormat(amount: Double) -> String {
-//        return "$" + String(format:"%.02f", amount)
-//    }

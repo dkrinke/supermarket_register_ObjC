@@ -12,5 +12,6 @@
 
 - (BOOL)validateInput:(NSString *)input;
 - (NSString *)toCap:(NSString *)lowercase;
+- (NSString *) toDollarFormat:(double *)amount;
 
 @end
