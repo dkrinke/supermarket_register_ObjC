@@ -16,6 +16,7 @@
 		A85F94FE1E4EDE9800E847D2 /* Supermarket_Register_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F94FD1E4EDE9800E847D2 /* Supermarket_Register_ObjCTests.m */; };
 		A85F95091E4EDE9800E847D2 /* Supermarket_Register_ObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F95081E4EDE9800E847D2 /* Supermarket_Register_ObjCUITests.m */; };
 		A85F95171E4F0F8800E847D2 /* HelperFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F95161E4F0F8800E847D2 /* HelperFunctions.m */; };
+		A85F951A1E4F30A800E847D2 /* ProductRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F95191E4F30A800E847D2 /* ProductRecord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		A85F950A1E4EDE9800E847D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85F95161E4F0F8800E847D2 /* HelperFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperFunctions.m; sourceTree = "<group>"; };
 		A85F95181E4F124F00E847D2 /* HelperFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelperFunctions.h; sourceTree = "<group>"; };
+		A85F95191E4F30A800E847D2 /* ProductRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRecord.m; sourceTree = "<group>"; };
+		A85F951B1E4F30C600E847D2 /* ProductRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductRecord.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +123,11 @@
 		A85F94E31E4EDE9800E847D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A85F95161E4F0F8800E847D2 /* HelperFunctions.m */,
 				A85F94E41E4EDE9800E847D2 /* main.m */,
 				A85F95181E4F124F00E847D2 /* HelperFunctions.h */,
+				A85F95161E4F0F8800E847D2 /* HelperFunctions.m */,
+				A85F951B1E4F30C600E847D2 /* ProductRecord.h */,
+				A85F95191E4F30A800E847D2 /* ProductRecord.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				A85F95171E4F0F8800E847D2 /* HelperFunctions.m in Sources */,
 				A85F94E81E4EDE9800E847D2 /* AppDelegate.m in Sources */,
 				A85F94E51E4EDE9800E847D2 /* main.m in Sources */,
+				A85F951A1E4F30A800E847D2 /* ProductRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +522,7 @@
 				A85F950F1E4EDE9800E847D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A85F95101E4EDE9800E847D2 /* Build configuration list for PBXNativeTarget "Supermarket_Register_ObjCTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +531,7 @@
 				A85F95121E4EDE9800E847D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A85F95131E4EDE9800E847D2 /* Build configuration list for PBXNativeTarget "Supermarket_Register_ObjCUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +540,7 @@
 				A85F95151E4EDE9800E847D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
