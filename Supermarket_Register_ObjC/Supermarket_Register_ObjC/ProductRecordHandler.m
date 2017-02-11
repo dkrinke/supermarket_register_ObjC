@@ -114,54 +114,28 @@
     }
     NSLog(@"Total Price: $%.2f", total);
 
+    double taxResult = *[self calculateTax: &total];
+    total = total + taxResult;
+    
+    [result addObject: [NSNumber numberWithDouble: taxResult]];
     [result addObject: [NSNumber numberWithDouble: total]];
     
     return result;
 }
 
-@end
 
-//    /**
-//     Calculates the total(Including tax) based on the user input.
-//     
-//     - parameter bar: A string containing product codes seperated with a ;.
-//     
-//     - returns: Returns the tax and the total value(Including tax).
-//     */
-//    func calcTotal(products: String) -> Array<Double> {
-//        let list = products.components(separatedBy: ";")
-//        var result = Array<Double>()
-//        
-//        var total = 0.00
-//        
-//        list.forEach { (code) in
-//            
-//            if let product = productRecordList[code]
-//            {
-//                total += product.getPrice
-//            }
-//        }
-//        
-//        let tax = calculateTax(preTaxTotal: total)
-//        total += tax
-//        
-//        result.append(tax)
-//        result.append(total)
-//        
-//        return result
-//    }
-//    
-//    /**
-//     Calculates the tax based on the total input.
-//     
-//     - parameter bar: The pre-tax total.
-//     
-//     - returns: Tax value rounded to two decimal places.
-//     */
-//    func calculateTax(preTaxTotal: Double) -> Double {
-//        
-//        let tax = preTaxTotal * 0.0875
-//        let roundedTax = Double(round(100*tax)/100)
-//        
-//        return roundedTax
-//    }
+/**
+ Calculates the tax based on the total input.
+ 
+ - parameter bar: The pre-tax total.
+ 
+ - returns: Tax value rounded to two decimal places.
+*/
+- (double *) calculateTax: (double *) preTaxTotal{
+    double tax = *preTaxTotal * 0.0875;
+    double roundedTax = round(100*tax)/100;
+    
+    return &roundedTax;
+}
+
+@end

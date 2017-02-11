@@ -53,14 +53,12 @@ HelperFunctions *helper;
         //Product Handler Functions called here
         NSMutableArray *results = [productRecordHandler calcTotal: enteredText];
         
-        double testTax = 0.10000001f;
-
         NSNumber *realTax = results[0];
-        NSNumber *realTotal = results[0];
+        NSNumber *realTotal = results[1];
         
 //        NSLog(@"Total: %.2f", realTotal); //Testing
  
-        _tax.text = [helper toDollarFormat:testTax]; //Testing to confirm UILabel update method
+        _tax.text = [helper toDollarFormat:realTax.doubleValue]; //Testing to confirm UILabel update method
         _total.text = [helper toDollarFormat:realTotal.doubleValue]; //Testing to confirm UILabel update method
 
     }
