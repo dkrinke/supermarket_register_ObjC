@@ -25,7 +25,6 @@
 */
 - (BOOL)validateInput:(NSString *)input{
     
-    NSLog(@"toCap Result: %@", input); //Testing
     BOOL didValidate = NO;
     
     if([input  isEqual: @""]){
@@ -70,7 +69,6 @@
 */
 - (NSString *) toDollarFormat:(double)amount{
     
-    NSLog(@"Pre Amount: %.2f", amount); //Testing
     return [NSString stringWithFormat:@"$%.2f", amount];
 }
 

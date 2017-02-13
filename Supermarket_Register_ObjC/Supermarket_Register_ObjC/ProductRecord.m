@@ -19,12 +19,12 @@
 
 @implementation ProductRecord
 
-- (BOOL) passInName:(NSString *) newName passInCode:(NSString *) newCode passInPrice:(double) newPrice {
+- (BOOL) passInName:(NSString *) newName passInCode:(NSString *) newCode passInPrice:(double *) newPrice {
     BOOL success = YES;
     
     self.name = newName;
     self.code = newCode;
-    self.price = newPrice;
+    self.price = *newPrice;
     
     return success;
 }
