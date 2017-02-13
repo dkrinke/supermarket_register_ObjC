@@ -40,31 +40,26 @@ HelperFunctions *helper;
 }
 
 - (IBAction)submitProcessCodes:(UIButton *)sender {
-    NSLog(@"Submit Clicked"); //Testing
     
     NSString *enteredText = [_userInput text];
-    
-    NSLog(@"User Input: %@", enteredText); //Testing
-    
+        
     //Helper Functions called here
     if([helper validateInput: [helper toCap:enteredText]])
     {
-        NSLog(@"Passed"); //Testing
+//        NSLog(@"Passed"); //Testing
         //Product Handler Functions called here
         NSMutableArray *results = [productRecordHandler calcTotal: enteredText];
         
         NSNumber *realTax = results[0];
         NSNumber *realTotal = results[1];
         
-//        NSLog(@"Total: %.2f", realTotal); //Testing
- 
         _tax.text = [helper toDollarFormat:realTax.doubleValue]; //Testing to confirm UILabel update method
         _total.text = [helper toDollarFormat:realTotal.doubleValue]; //Testing to confirm UILabel update method
 
     }
     else
     {
-        NSLog(@"Failed"); //Testing
+//        NSLog(@"Failed"); //Testing
         UIAlertController * alert = [UIAlertController
                                      alertControllerWithTitle:@"Invalid User Input"
                                      message:@"Try inputing the product codes again. Separate multiple product codes with ;"

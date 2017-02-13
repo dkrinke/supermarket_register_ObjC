@@ -61,7 +61,7 @@
     
     [productDictionary setObject: product forKey: key];
     NSLog(@"[Product Added]");
-    [self printRecord: key];
+//    [self printRecord: key]; // For Testing
 
     return success;
 }
@@ -73,6 +73,10 @@
     NSLog(@"Product Code: %@", [value getCode]);
     NSLog(@"Product Price: $%.2f", [value getPrice]);
     NSLog(@"*************************************");
+}
+
+- (ProductRecord<NSObject> *) getProductRecord: (NSString *) key{
+    return productDictionary[key];
 }
 
 /**
@@ -99,8 +103,6 @@
 - (NSMutableArray *) calcTotal: (NSString *) productCodes{
     NSArray *array = [productCodes componentsSeparatedByString:@";"];
     
-    NSLog(@"Array after split: %@", array);
-
     NSMutableArray *result = [[NSMutableArray alloc] init];
     double total = 0.00;
     
@@ -108,13 +110,11 @@
         if(![object isEqual:@""])
         {
         ProductRecord<NSObject> *value = productDictionary[object];
-        NSLog(@"Product Price: $%.2f", [value getPrice]);
         total = total + [value getPrice];
         }
     }
-    NSLog(@"Total Price: $%.2f", total);
-
-    double taxResult = *[self calculateTax: &total];
+    
+    double taxResult = [self calculateTax: &total];
     total = total + taxResult;
     
     [result addObject: [NSNumber numberWithDouble: taxResult]];
@@ -131,11 +131,11 @@
  
  - returns: Tax value rounded to two decimal places.
 */
-- (double *) calculateTax: (double *) preTaxTotal{
+- (double ) calculateTax: (double *) preTaxTotal{
     double tax = *preTaxTotal * 0.0875;
     double roundedTax = round(100*tax)/100;
     
-    return &roundedTax;
+    return roundedTax;
 }
 
 @end
