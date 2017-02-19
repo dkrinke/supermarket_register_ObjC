@@ -5,7 +5,6 @@
 //  Created by iostest on 2/11/17.
 //  Copyright © 2017 Gannett. All rights reserved.
 //
-
 #import "ViewController.h"
 #import "HelperFunctions.h"
 #import "ProductRecordHandler.h"
@@ -49,30 +48,58 @@ HelperFunctions *helper;
 //        NSLog(@"Passed"); //Testing
         //Product Handler Functions called here
         NSMutableArray *results = [productRecordHandler calcTotal: enteredText];
-        
         NSNumber *realTax = results[0];
         NSNumber *realTotal = results[1];
         
-        _tax.text = [helper toDollarFormat:realTax.doubleValue]; //Testing to confirm UILabel update method
-        _total.text = [helper toDollarFormat:realTotal.doubleValue]; //Testing to confirm UILabel update method
+        if (realTax.doubleValue != 0.00 && realTotal.doubleValue != 0.00)
+        {
+            _tax.text = [helper toDollarFormat:realTax.doubleValue]; //Testing to confirm UILabel update method
+            _total.text = [helper toDollarFormat:realTotal.doubleValue]; //Testing to confirm UILabel update method
+        }
+        else{
+            _tax.text = [helper toDollarFormat:0.00]; //Testing to confirm UILabel update method
+            _total.text = [helper toDollarFormat:0.00]; //Testing to confirm UILabel update method
+            [self displayErrorMessage:0];
+
+        }
 
     }
     else
     {
-//        NSLog(@"Failed"); //Testing
-        UIAlertController * alert = [UIAlertController
-                                     alertControllerWithTitle:@"Invalid User Input"
-                                     message:@"Try inputing the product codes again. Separate multiple product codes with ;"
-                                     preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* dismiss = [UIAlertAction
-                                   actionWithTitle:@"Dismiss"
-                                   style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction * action) {
-                                       //Handle no, thanks button
-                                   }];
-        [alert addAction:dismiss];
-        [self presentViewController:alert animated:YES completion:nil];
+        [self displayErrorMessage:1];
     }
     
 }
+
+- (void)displayErrorMessage:(int)messageType{
+    
+    UIAlertAction * dismiss;
+    UIAlertController * alert;
+    
+    switch (messageType) {
+        case 0:
+            alert = [UIAlertController
+                     alertControllerWithTitle:@"Invalid User Input"
+                     message:@"One or more of the product codes entered were incorrect"
+                     preferredStyle:UIAlertControllerStyleAlert];
+            break;
+        case 1:
+            alert = [UIAlertController
+                     alertControllerWithTitle:@"Invalid User Input"
+                     message:@"Try inputing the product codes again. Separate multiple product codes with ;"
+                     preferredStyle:UIAlertControllerStyleAlert];
+            break;
+        default:
+            break;
+    }
+    
+    dismiss = [UIAlertAction
+               actionWithTitle:@"Dismiss"
+               style:UIAlertActionStyleDefault
+               handler:^(UIAlertAction * action) {}];
+    [alert addAction:dismiss];
+    [self presentViewController:alert animated:YES completion:nil];
+
+}
+
 @end
