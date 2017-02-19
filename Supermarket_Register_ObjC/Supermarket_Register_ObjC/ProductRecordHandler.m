@@ -109,8 +109,17 @@
     for (id object in array){
         if(![object isEqual:@""])
         {
-        ProductRecord<NSObject> *value = productDictionary[object];
-        total = total + [value getPrice];
+            ProductRecord<NSObject> *value = productDictionary[object];
+            if(value)
+            {
+                total = total + [value getPrice];
+            }
+            else
+            {
+                [result addObject: [NSNumber numberWithDouble: 0.00]];
+                [result addObject: [NSNumber numberWithDouble: 0.00]];
+                return result;
+            }
         }
     }
     
