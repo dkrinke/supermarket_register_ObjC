@@ -19,19 +19,15 @@
 /**
  Vadlidates users input
  
- - parameter bar: String of user input
+ - parameter bar: NSString of user input
  
  - returns: Boolean.
 */
 - (BOOL)validateInput:(NSString *)input{
-    
     BOOL didValidate = NO;
     
-    if([input  isEqual: @""]){
-        didValidate = NO;
-    }
-    
-    else{
+    //If input is empty, validation fails
+    if(![input  isEqual: @""]){
         NSError *error = nil;
         NSString *pattern = @"^((([A-Za-z0-9]{4}-){3})[A-Za-z0-9]{4})$|^((([A-Za-z0-9]{4}-){3})[A-Za-z0-9]{4};)+((([A-Za-z0-9]{4}-){3})[A-Za-z0-9]{4};?)$";
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
@@ -52,9 +48,9 @@
 /**
  Converts user input to uppercase and returns the result
 
- - parameter bar: String of user input
+ - parameter bar: NSString of user input
 
- - returns: String.
+ - returns: NSString.
 */
 - (NSString *)toCap:(NSString *)lowercase{
     return lowercase.uppercaseString;
@@ -63,12 +59,11 @@
 /**
  Converts a Double into a Dollar amount format String
 
- - parameter bar: String Double amount
+ - parameter bar: Double amount
 
- - returns: String.
+ - returns: NSString.
 */
 - (NSString *) toDollarFormat:(double)amount{
-    
     return [NSString stringWithFormat:@"$%.2f", amount];
 }
 
