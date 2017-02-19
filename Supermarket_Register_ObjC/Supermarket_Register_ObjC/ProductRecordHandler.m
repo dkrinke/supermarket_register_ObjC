@@ -17,6 +17,11 @@
 
 @implementation ProductRecordHandler
 
+/**
+ Initializes the products supported but the app
+ 
+ -returns: id
+*/
 - (id)init {
     if ( self = [super init] ) {
         productDictionary = [[NSMutableDictionary alloc] init];
@@ -43,7 +48,7 @@
         [self addKey: @"TQ4C-VV6T-75ZX-1RMR" addProduct: product4];
         [self addKey: @"65P1-UDGM-XH2M-LQW2" addProduct: product5];
         
-//        [self printAllRecords]; //For testing
+        //[self printAllRecords]; //For testing
     }
     return self;
 }
@@ -66,6 +71,13 @@
     return success;
 }
 
+/**
+ Prints out a record to the console
+ 
+ - parameter bar: Product key
+ 
+ - returns: Void.
+ */
 - (void) printRecord: (NSString *) key{
     ProductRecord<NSObject> *value = productDictionary[key];
     
@@ -75,6 +87,13 @@
     NSLog(@"*************************************");
 }
 
+/**
+ Returns the corresponding Product Record for a provided key
+ 
+ - parameter bar: Product key
+ 
+ - returns: ProductRecord<NSObject>.
+ */
 - (ProductRecord<NSObject> *) getProductRecord: (NSString *) key{
     return productDictionary[key];
 }
@@ -116,6 +135,7 @@
             }
             else
             {
+                // Returns 0.00 for total and tax if product code not found
                 [result addObject: [NSNumber numberWithDouble: 0.00]];
                 [result addObject: [NSNumber numberWithDouble: 0.00]];
                 return result;

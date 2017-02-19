@@ -28,44 +28,42 @@ HelperFunctions *helper;
     self.view.backgroundColor = [UIColor lightGrayColor]; //Change background color
     helper = [[HelperFunctions alloc] init];
     productRecordHandler = [[ProductRecordHandler alloc] init];
-
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)submitProcessCodes:(UIButton *)sender {
-    
     NSString *enteredText = [_userInput text];
         
     //Helper Functions called here
     if([helper validateInput: [helper toCap:enteredText]])
     {
-//        NSLog(@"Passed"); //Testing
         //Product Handler Functions called here
         NSMutableArray *results = [productRecordHandler calcTotal: enteredText];
+        //Retrieve tax from result
         NSNumber *realTax = results[0];
+        //Retrieve total from result
         NSNumber *realTotal = results[1];
         
+        //Values set to 0.00 if incorrect product code detected
         if (realTax.doubleValue != 0.00 && realTotal.doubleValue != 0.00)
         {
-            _tax.text = [helper toDollarFormat:realTax.doubleValue]; //Testing to confirm UILabel update method
-            _total.text = [helper toDollarFormat:realTotal.doubleValue]; //Testing to confirm UILabel update method
+            //Testing to confirm UILabel update method
+            _tax.text = [helper toDollarFormat:realTax.doubleValue];
+            //Testing to confirm UILabel update method
+            _total.text = [helper toDollarFormat:realTotal.doubleValue];
         }
         else{
-            _tax.text = [helper toDollarFormat:0.00]; //Testing to confirm UILabel update method
-            _total.text = [helper toDollarFormat:0.00]; //Testing to confirm UILabel update method
+            //Error: User provided incorrect product code
             [self displayErrorMessage:0];
-
         }
-
     }
     else
     {
+        //Error: User provided incorrect input format
         [self displayErrorMessage:1];
     }
     
@@ -75,6 +73,9 @@ HelperFunctions *helper;
     
     UIAlertAction * dismiss;
     UIAlertController * alert;
+    
+    _tax.text = [helper toDollarFormat:0.00]; //Set tax to $0.00
+    _total.text = [helper toDollarFormat:0.00]; //Set total to $0.00
     
     switch (messageType) {
         case 0:
