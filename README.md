@@ -9,10 +9,21 @@ This project takes a set of Product codes from the user and calculates the total
 ## Implementation
 
 ### Dependencies
+* TravisCI  
+    + language: objective-c  
+    + osx_image: xcode8.2  
+    + xcode_project: Supermarket_Register_ObjC/Supermarket_Register_ObjC.xcodeproj  
+    + xcode_scheme: Supermarket_Register_ObjC  
+    + xcode_sdk: iphonesimulator8.3  
 
 ### Installation
+* TravisCI 
+    + https://www.raywenderlich.com/109418/travis-ci-tutorial
+* supermarket_register_gannett_ObjC
+    + Launch to device using xcode
 
-### Usage
+### Usage  
+User provides a set of product codes into the input text field. Upon clicking submit, the application verifies that the product codes submitted are formatted correct, returning an error message upon failure, and processes the request if it passes verification. The output is displayed in the UI as "Tax" and "Total" values. 
 
 **[Back to top](#table-of-contents)**
 
@@ -31,11 +42,11 @@ Possible input Strings:
 4. TQ4C-VV6T-75ZX-1RMR (Product: Pizza Price: $6.78)  
 5. 65P1-UDGM-XH2M-LQW2 (Product: Tuna Price: $5.89)    
 
-* Demo input String: 
-    + A12T-4GH7-QPL9-3N4M;65P1-UDGM-XH2M-LQW2  
-* Demo Output  
-    + Tax: $0.82  
-    + Total: $10.17  
+Demo input String:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A12T-4GH7-QPL9-3N4M;65P1-UDGM-XH2M-LQW2  
+Demo Output:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tax: $0.82  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total: $10.17  
 
 <img src="https://cloud.githubusercontent.com/assets/7190790/22855256/43716e2c-f04b-11e6-9698-b543c06dbac0.jpg" width="200">
 
