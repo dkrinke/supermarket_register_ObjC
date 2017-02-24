@@ -25,13 +25,17 @@ This project takes a set of Product codes from the user and calculates the total
 
 ## Demo
 Possible input Strings:  
-1. A12T-4GH7-QPL9-3N4M  
-2. E5T6-9UI3-TH15-QR88  
-3. YRT6-72AS-K736-L4AR  
-4. TQ4C-VV6T-75ZX-1RMR  
-5. 65P1-UDGM-XH2M-LQW2  
+1. A12T-4GH7-QPL9-3N4M (Product: Cereal Price: $3.46)  
+2. E5T6-9UI3-TH15-QR88 (Product: Chicken Price: $8.18)  
+3. YRT6-72AS-K736-L4AR (Product: Pop Price: $1.63)  
+4. TQ4C-VV6T-75ZX-1RMR (Product: Pizza Price: $6.78)  
+5. 65P1-UDGM-XH2M-LQW2 (Product: Tuna Price: $5.89)    
 
-Demo input String: A12T-4GH7-QPL9-3N4M;65P1-UDGM-XH2M-LQW2
+* Demo input String: 
+    + A12T-4GH7-QPL9-3N4M;65P1-UDGM-XH2M-LQW2  
+* Demo Output  
+    + Tax: $0.82  
+    + Total: $10.17  
 
 <img src="https://cloud.githubusercontent.com/assets/7190790/22855256/43716e2c-f04b-11e6-9698-b543c06dbac0.jpg" width="200">
 
